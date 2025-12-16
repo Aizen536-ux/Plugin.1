@@ -157,7 +157,7 @@ public class Main extends JavaPlugin implements Listener {
                 p.sendMessage(ChatColor.AQUA + "Tu as été désinfecté !");
             }
         }
-        Bukkit.broadcastMessage(ChatColor.GREEN + "Tous les infectés ont été rendus humains !");
+        Bukkit.broadcastMessage(ChatColor.GREEN + "Tous les les joueurs infectés son redevenu humains");
     }
 
     private void handleListCommand(Player player) {
@@ -194,7 +194,7 @@ public class Main extends JavaPlugin implements Listener {
 
         if (isInside(event.getTo(), safeMin, safeMax)) {
             player.setHealth(0);
-            player.sendMessage(ChatColor.DARK_RED + "Tu viens de rentrer dans une SAFE ZONE !");
+            player.sendMessage(ChatColor.DARK_RED + "Tu viens de rentrer dans une safe zone !");
         }
     }
 
@@ -236,7 +236,7 @@ public class Main extends JavaPlugin implements Listener {
 
     private void infectPlayer(Player player, Player source) {
         infected.add(player.getUniqueId());
-        player.sendMessage(ChatColor.DARK_GREEN + "Tu es INFECTÉ... 🤢");
+        player.sendMessage(ChatColor.DARK_GREEN + "Tu es devenu un INFECTÉ... ");
 
         if (source != null)
             source.sendMessage(ChatColor.GREEN + "Tu viens d'infecter " + player.getName());
@@ -312,20 +312,20 @@ public class Main extends JavaPlugin implements Listener {
     private void setEventZone(Player player, int index, boolean isMin) {
         if (isMin) {
             eventZones[index].min = player.getLocation();
-            player.sendMessage(ChatColor.GREEN + "Zone EVENT " + (index + 1) + " - Point 1 défini !");
+            player.sendMessage(ChatColor.GREEN + "Zone EVENT " + (index + 1) + " - Point 1 défini ");
         } else {
             eventZones[index].max = player.getLocation();
-            player.sendMessage(ChatColor.GREEN + "Zone EVENT " + (index + 1) + " - Point 2 défini !");
+            player.sendMessage(ChatColor.GREEN + "Zone EVENT " + (index + 1) + " - Point 2 défini ");
         }
     }
 
     private void setSafeZonePoint(Player player, boolean isMin) {
         if (isMin) {
             safeMin = player.getLocation();
-            player.sendMessage(ChatColor.RED + "SafeZone - Point 1 défini !");
+            player.sendMessage(ChatColor.RED + "SafeZone - Point 1 défini ");
         } else {
             safeMax = player.getLocation();
-            player.sendMessage(ChatColor.RED + "SafeZone - Point 2 défini !");
+            player.sendMessage(ChatColor.RED + "SafeZone - Point 2 défini ");
         }
     }
 
